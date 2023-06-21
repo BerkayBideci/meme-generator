@@ -18,32 +18,32 @@ const EditPage = ({ params }) => {
     return (
         <div>
             <h1 className="text-center text-4xl font-bold my-5">Edit Meme</h1>
-            <main className="container w-11/12 mx-auto">
-                {status === "loading" ? (
-                    "Loading..."
-                ) : status === "error" ? (
-                    <span>Error: {error.message}</span>
-                ) : (
-                    meme && (
-                        <>
+            {status === "loading" ? (
+                <p className="text-4xl text-center">Loading...</p>
+            ) : status === "error" ? (
+                <p className="text-2xl text-center">Error: {error.message}</p>
+            ) : (
+                meme && (
+                    <>
+                        <main className="container w-11/12 mx-auto mb-5">
                             <div
                                 key={meme.name}
                                 className="flex flex-col justify-center items-stretch rounded-2xl my-2"
                             >
                                 <Link
                                     href="/"
-                                    className="bg-green-400 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold text-center"
+                                    className="bg-green-400 hover:bg-green-500 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold text-center"
                                 >
-                                    Home
+                                    Back to All Memes
                                 </Link>
                                 <button
                                     onClick={handleAddText}
-                                    className="bg-green-400 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold"
+                                    className="bg-green-400 hover:bg-green-500 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold"
                                 >
                                     Add Draggable Text
                                 </button>
                                 <button
-                                    className="bg-green-400 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold"
+                                    className="bg-green-400 hover:bg-green-500 w-[14rem] mx-auto py-2 px-5 my-2 rounded-lg font-semibold"
                                     onClick={(e) => {
                                         exportComponentAsJPEG(memeRef);
                                     }}
@@ -67,10 +67,10 @@ const EditPage = ({ params }) => {
                                         <Text />
                                     ))}
                             </div>
-                        </>
-                    )
-                )}
-            </main>
+                        </main>
+                    </>
+                )
+            )}
         </div>
     );
 };

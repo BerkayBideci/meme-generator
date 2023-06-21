@@ -99,8 +99,13 @@ const Text = () => {
         setEditMode(!editMode);
     };
 
+    const handleDelete = () => {
+        setEditMode(false);
+        setValue(null);
+    };
+
     return (
-        <Draggable>
+        <Draggable onDoubleClick={handleDoubleClick}>
             {editMode ? (
                 <div
                     onDoubleClick={handleDoubleClick}
@@ -202,24 +207,36 @@ const Text = () => {
                         </select>
                     </div>
                     <button
-                        className="bg-green-400 py-2 px-5 mt-3 rounded-lg font-semibold"
+                        className="bg-green-400 hover:bg-green-500 py-2 px-5 mt-3 rounded-lg font-semibold"
+                        onClick={handleDoubleClick}
+                    >
+                        Done
+                    </button>
+                    <button
+                        className="bg-yellow-500 hover:bg-yellow-600 py-2 px-5 mt-3 rounded-lg font-semibold"
                         onClick={handleReset}
                     >
                         Reset to Default
                     </button>
+                    <button
+                        className="bg-red-400 hover:bg-red-500 py-2 px-5 mt-3 rounded-lg font-semibold"
+                        onClick={handleDelete}
+                    >
+                        Delete
+                    </button>
                 </div>
             ) : (
                 <div>
-                    <h1
+                    <p
                         onDoubleClick={handleDoubleClick}
                         style={{
                             fontFamily: fontStyle,
                             textShadow: fontShadow,
                         }}
-                        className={`${fontColor} ${fontSize}`}
+                        className={`${fontColor} ${fontSize} cursor-pointer`}
                     >
                         {value}
-                    </h1>
+                    </p>
                 </div>
             )}
         </Draggable>
