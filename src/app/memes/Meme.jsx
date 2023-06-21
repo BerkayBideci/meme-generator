@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export const Meme = ({ meme }) => {
+const Meme = ({ meme }) => {
     return (
         <div
             key={meme.id}
@@ -23,3 +23,5 @@ export const Meme = ({ meme }) => {
         </div>
     );
 };
+
+export default Meme;

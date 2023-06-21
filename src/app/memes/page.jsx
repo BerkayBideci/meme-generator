@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
 import { useMemes } from "../services/api";
-import { Meme } from "../meme/page";
+import Meme from "./Meme";
 
-export const Memes = () => {
+const Memes = () => {
     const { status, data, error } = useMemes();
 
     return (
@@ -29,3 +28,5 @@ export const Memes = () => {
         </div>
     );
 };
+
+export default Memes;
