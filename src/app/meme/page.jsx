@@ -13,17 +13,17 @@ export const Meme = ({ meme }) => {
     return (
         <div
             key={meme.id}
-            className="bg-green-100 flex flex-col justify-center items-center rounded-2xl"
+            className="bg-green-200 flex flex-col justify-between items-center rounded-2xl drop-shadow-xl"
         >
-            <h1 className="text-2xl font-bold my-2">{meme.name}</h1>
+            <h1 className="text-xl font-bold m-4 text-center">{meme.name}</h1>
             <img
                 src={meme.url}
                 alt={meme.name}
-                className="h-96 p-5"
+                className="h-48 p-5"
             />
             <Link
                 href={`/${meme.id}`}
-                className="bg-green-400 py-2 px-5 my-2 rounded-lg font-semibold"
+                className="bg-green-400 py-2 px-5 m-4 rounded-lg font-semibold"
             >
                 Edit
             </Link>

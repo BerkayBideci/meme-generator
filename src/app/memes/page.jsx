@@ -11,10 +11,10 @@ export const Memes = () => {
 
     return (
         <div>
-            <h1 className="text-center text-4xl font-bold my-2">
+            <h1 className="text-center text-4xl font-bold my-5">
                 Meme Generator
             </h1>
-            <main className="container w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <main className="container w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                 {status === "loading" ? (
                     "Loading..."
                 ) : status === "error" ? (
