@@ -5,10 +5,9 @@ import { useMemes } from "../services/api";
 import Text from "./Text";
 import Link from "next/link";
 import { exportComponentAsJPEG } from "react-component-export-image";
-import { v4 as uuidv4 } from "uuid";
 
 const EditPage = ({ params }) => {
-    const { status, data, error, isFetching } = useMemes();
+    const { status, data, error } = useMemes();
     const [count, setCount] = useState(0);
     const meme = data?.data?.memes?.find((meme) => meme.id === params.id);
     const memeRef = createRef();
@@ -66,7 +65,7 @@ const EditPage = ({ params }) => {
                                 {Array(count)
                                     .fill(0)
                                     .map((e) => (
-                                        <Text key={uuidv4()} />
+                                        <Text />
                                     ))}
                             </div>
                         </main>

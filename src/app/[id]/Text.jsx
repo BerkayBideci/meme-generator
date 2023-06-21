@@ -5,7 +5,7 @@ import Draggable from "react-draggable";
 
 const Text = () => {
     const [editMode, setEditMode] = useState(false);
-    const [value, setValue] = useState("Double Click to Edit");
+    const [value, setValue] = useState("Double Click To Edit");
     const [fontStyle, setFontStyle] = useState("Impact");
     const [fontColor, setFontColor] = useState("text-black");
     const [fontShadow, setFontShadow] = useState("none");
@@ -89,7 +89,7 @@ const Text = () => {
     };
 
     const handleReset = () => {
-        setValue("Double Click to Edit");
+        setValue("Double Click To Edit");
         setFontStyle("Impact");
         setFontColor("text-black");
         setFontShadow("none");
@@ -107,7 +107,7 @@ const Text = () => {
     };
 
     return (
-        <Draggable onDoubleClick={handleDoubleClick}>
+        <Draggable>
             {editMode ? (
                 <div
                     onDoubleClick={handleDoubleClick}
