@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, createRef } from "react";
 import { useMemes } from "../services/api";
 import Text from "./Text";

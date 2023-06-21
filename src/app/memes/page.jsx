@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useQueryClient } from "@tanstack/react-query";
 import { useMemes } from "../services/api";
 import { Meme } from "../meme/page";
 
