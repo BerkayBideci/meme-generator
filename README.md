@@ -1,3 +1,7 @@
+A web-based meme generator, allows users to add captions to popular meme templates and save them on their devices. The project utilizes Imgflip API.
+
+##
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
